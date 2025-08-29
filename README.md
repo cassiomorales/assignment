@@ -10,9 +10,7 @@ A Spring Boot application for managing support tickets, using PostgreSQL for per
 
 ## Setup and Running Locally
 1. **Start Docker Compose**:
-   ```bash
    docker-compose up -d
-   ```
    This starts PostgreSQL, ZooKeeper, and Kafka.
 
 2. **Run the Spring Boot Application**:
@@ -33,7 +31,7 @@ A Spring Boot application for managing support tickets, using PostgreSQL for per
 
 ## Running Tests
 1. **Unit and Integration Tests**:
-   Run tests with the `test` profile, using H2 and embedded Kafka:
+   Run tests :
    ```bash
    mvn clean test
    ```
