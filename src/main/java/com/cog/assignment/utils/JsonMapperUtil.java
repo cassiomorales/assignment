@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-
 public class JsonMapperUtil {
 
     private static final ObjectMapper mapper = new ObjectMapper()

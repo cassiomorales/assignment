@@ -59,14 +59,14 @@ class SupportTicketControllerTest {
 
     @Test
     void getSupportTicketById_ShouldThrowException_WhenIdDoesNotExist() {
-        String ticketId = "999";
+        String ticketId = "123";
         BDDMockito.when(supportTicketService.getSupportTicketById(ticketId))
                 .thenThrow(new ResponseStatusException(HttpStatus.NOT_FOUND, "Ticket not found " + ticketId));
 
         try {
             supportTicketController.getSupportTicketById(ticketId);
         } catch (RuntimeException e) {
-            Assertions.assertEquals("404 NOT_FOUND \"Ticket not found 999\"", e.getMessage());
+            Assertions.assertEquals("404 NOT_FOUND \"Ticket not found 123\"", e.getMessage());
         }
     }
 }

@@ -34,12 +34,11 @@ public class SupportTicketService {
     }
 
     private static final String KAFKA_TOPIC = "ticket-events";
-    private void publishEvent(SupportTicket ticket) {
+    public void publishEvent(SupportTicket ticket) {
         try {
             kafkaTemplate.send(KAFKA_TOPIC, JsonMapperUtil.mapToJsonString(new SupportTicketEvent(
                     EventType.CREATED, ticket.getId().toString(), OffsetDateTime.now().toString(),
-                    JsonMapperUtil.mapToJsonString(ticket)
-            )));
+                    JsonMapperUtil.mapToJsonString(ticket))));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "INTERNAL_SERVER_ERROR");

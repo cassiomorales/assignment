@@ -70,7 +70,7 @@ class SupportTicketServiceIntegrationTest {
     }
 
     @Test
-    void saveSupportTicket_shouldSaveAndPublishEventToKafka() throws InterruptedException, JsonProcessingException {
+    void saveSupportTicket_shouldSaveAndPublishEventToKafka_WhenSuccess() throws InterruptedException, JsonProcessingException {
         SupportTicketRequest request = new SupportTicketRequest();
         request.setTitle("Test Ticket");
         request.setDescription("Test Description");
